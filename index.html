@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mis ojos bonitos por siempre</title>
+<style>
+body{
+    margin:0;
+    padding:0;
+    background:linear-gradient(to bottom,#000000,#1a001a);
+    overflow:hidden;
+    font-family: 'Arial', cursive;
+    color:white;
+    text-align:center;
+}
+
+h1{
+    margin-top:20%;
+    font-size:3em;
+    animation:latido 1.5s infinite;
+}
+
+@keyframes latido{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+
+.corazon{
+    position:absolute;
+    color:#ff4d6d;
+    font-size:20px;
+    animation:flotar 6s linear infinite;
+}
+
+@keyframes flotar{
+    0%{transform:translateY(100vh);opacity:1;}
+    100%{transform:translateY(-10vh);opacity:0;}
+}
+
+.nombre{
+    position:absolute;
+    top:10%;
+    width:100%;
+    font-size:2em;
+    color:#ff99cc;
+    animation:flotarNombre 8s ease-in-out infinite;
+}
+
+@keyframes flotarNombre{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(20px);}
+}
+
+.fecha{
+    position:absolute;
+    bottom:10%;
+    width:100%;
+    font-size:1.2em;
+    color:#cccccc;
+}
+</style>
+</head>
+<body>
+
+<div class="nombre">Ferchis ♾️</div>
+
+<h1>Mis ojos bonitos por siempre 💗</h1>
+
+<div class="fecha">24 de Enero 2025</div>
+
+<audio autoplay loop>
+    <source src="AQUI_VA_TU_LINK_MP3_1" type="audio/mpeg">
+    <source src="AQUI_VA_TU_LINK_MP3_2" type="audio/mpeg">
+    <source src="AQUI_VA_TU_LINK_MP3_3" type="audio/mpeg">
+    <source src="AQUI_VA_TU_LINK_MP3_4" type="audio/mpeg">
+    <source src="AQUI_VA_TU_LINK_MP3_5" type="audio/mpeg">
+    <source src="AQUI_VA_TU_LINK_MP3_6" type="audio/mpeg">
+</audio>
+
+<script>
+function crearCorazon(){
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerHTML = "💗";
+    corazon.style.left = Math.random()*100 + "vw";
+    corazon.style.fontSize = Math.random()*20 + 15 + "px";
+    corazon.style.animationDuration = Math.random()*3 + 3 + "s";
+    document.body.appendChild(corazon);
+
+    setTimeout(()=>{
+        corazon.remove();
+    },6000);
+}
+
+setInterval(crearCorazon,300);
+</script>
+
+</body>
+</html>
